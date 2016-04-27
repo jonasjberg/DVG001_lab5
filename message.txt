@@ -1,0 +1,17 @@
+Introduktion till Linux och små nätverk 7,5 hp, distans, VT16
+================================================================================
+
+
+Inlämningsuppgift fem
+---------------------
+
+Bifogade filer: Fil Laboration5.pdf (156,755 KB)
+
+Här skall ni sätta upp en filserver, kontrollera vilka portar som är öppna på
+er server samt ställa in en brandvägg.
+
+Ni behöver ha läst till F5 för att ha tillräckligt med information för att lösa
+denna uppgift.
+
+
+**Den här behöver vara färdig till 9/5 kl 23:59.**
