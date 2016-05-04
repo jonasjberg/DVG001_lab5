@@ -1,0 +1,14 @@
+jonas@debian:~/Documents/lab5$ nmap localhost 
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2016-05-04 17:28 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00030s latency).
+Other addresses for localhost (not scanned): 127.0.0.1
+Not shown: 996 closed ports
+PORT    STATE SERVICE
+22/tcp  open  ssh
+25/tcp  open  smtp
+111/tcp open  rpcbind
+631/tcp open  ipp
+
+Nmap done: 1 IP address (1 host up) scanned in 0.20 seconds

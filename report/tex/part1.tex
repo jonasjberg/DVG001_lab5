@@ -27,4 +27,20 @@ programmen \texttt{netstat} och \texttt{nmap}.
 
 
 \subsubsection{Lösning}
-% TODO: ..
+Först används programmet \texttt{netstat} för att visa information om
+nätverksanslutningar. 
+
+--verbose 
+--all 
+--tcp 
+--numeric
+
+\begin{listing}[H]
+  \shellcode{include/p1_netstat1}
+  \caption{Körning av \texttt{netstat}.}
+  \label{listing:netstat}
+\end{listing}
+
+
+Först används programmet \texttt{netstat} för att visa information om
+nätverksanslutningar. 
