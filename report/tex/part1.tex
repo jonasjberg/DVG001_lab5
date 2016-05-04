@@ -28,12 +28,12 @@ programmen \texttt{netstat} och \texttt{nmap}.
 
 \subsubsection{Lösning}
 Först används programmet \texttt{netstat} för att visa information om
-nätverksanslutningar. 
+nätverksanslutningar. Körning visas i Programlistning~\ref{listing:netstat}.
 
---verbose 
---all 
---tcp 
---numeric
+% --verbose 
+% --all 
+% --tcp 
+% --numeric
 
 \begin{listing}[H]
   \shellcode{include/p1_netstat1}
@@ -42,5 +42,11 @@ nätverksanslutningar.
 \end{listing}
 
 
-Först används programmet \texttt{netstat} för att visa information om
-nätverksanslutningar. 
+Sedan körs programmet \texttt{nmap} med den lokala datorn som argument, utan
+övriga flaggor. Körning av detta visas i Programlistning~\ref{listing:nmap}.
+
+\begin{listing}[H]
+  \shellcode{include/p1_nmap}
+  \caption{Körning av \texttt{nnmap}.}
+  \label{listing:nnmap}
+\end{listing}
