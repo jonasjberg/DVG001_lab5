@@ -23,37 +23,48 @@ på datorn.
 \subsection{Uppgift 1}
 \subsubsection{Uppgiftsbeskrivning}
 Uppgiften är att kontrollera vilka portar som är öppna på vår server med
-programmen \texttt{netstat} och \texttt{nmap}.  
+programmen \texttt{netstat} och \texttt{nmap}.
 
 
 \subsubsection{Lösning}
 Först används programmet \texttt{netstat} för att visa information om
 nätverksanslutningar. Körning visas i Programlistning~\ref{listing:netstat}.
 
-% --verbose 
-% --all 
-% --tcp 
+% --verbose
+% --all
+% --tcp
 % --numeric
 
 \shellsource{include/p1_netstat1}
-					  {Körning av \texttt{netstat}.}
+				    {Körning av \texttt{netstat}.}
 			 	    {listing:netstat}
+
 
 Sedan körs programmet \texttt{nmap} med den lokala datorn som argument, utan
 övriga flaggor. Körning av detta visas i Programlistning~\ref{listing:nmap}.
 
-\begin{listing}[H]
-  \shellcode{include/p1_nmap}
-  \caption{Körning av \texttt{nmap}.}
-  \label{listing:nmap}
-\end{listing}
+\shellsource{include/p1_nmap}
+					  {Körning av \texttt{nmap}.}
+			 	    {listing:nmap}
+
 
 För att jämföra utmatningarnas innehåll kombineras innehållet i
-Programlistning~\ref{listing:netstat} och Programlistning~\ref{listing:nmap}.
-Kombinationen visas i Programlistning~\ref{listing:diff}
+Programlistning~\ref{listing:netstat} och~\ref{listing:nmap}, vilket ger
+resultatet som visas i Programlistning~\ref{listing:diff}.
+Varje rad i listan en adress/port.  En del av informationen finns med i båda
+programmens utmatning.  t.ex. vilket protokoll det rör sig om står under
+kolumnen \texttt{Proto} i utmatningen från \texttt{netstat}, medan
+\texttt{nmap} listar både port och protokoll (utan att specifiera
+\texttt{IPv4}/\texttt{IPv6}) under kolumnen \texttt{PORT}.
+I utmatningen från \texttt{netstat} listas port tillsammans med
+\texttt{IP}-adress} i kolumnen \texttt{Local Address}, samtidigt saknas
+information om \texttt{IP}-adresser} helt i utmatningen från \texttt{nmap}.
+Nämnvärt är också att \texttt{nmap} skriver ut information om ''services'',
+alltså vilka program som lyssnar på en viss port, under kolumnen
+\texttt{SERVICE}.
 
-\begin{listing}[H]
-  \shellcode{include/p1_nmap}
-  \caption{Körning av \texttt{nnmap}.}
-  \label{listing:nmap}
-\end{listing}
+\shellsource{include/p1_diff}
+					  {Sammanslagning av informationen i
+ 			 	  	 Programlistning~\ref{listing:netstat} och~\ref{listing:nmap}.}
+			 	    {listing:diff}
+
