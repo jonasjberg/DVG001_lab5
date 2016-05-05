@@ -125,6 +125,14 @@ texcl=false,
 
 \usepackage{pdfpages}
 
+\newcommand{\shellsource}[3]{
+\begin{listing}[H]
+\shellcode{#1}
+\caption{#2}
+\label{#3}
+\end{listing}
+}
+
 
 \title{\textsc{DVG001}                         \\
        Introduktion till Linux och små nätverk \\
@@ -179,7 +187,7 @@ texcl=false,
   \input{tex/part3.tex}
 
   \newpage
-  \input{tex/results.tex}
+  %\input{tex/results.tex}
 
   \addcontentsline{toc}{section}{Referenser}
   \printbibliography{}

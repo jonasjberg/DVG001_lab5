@@ -35,18 +35,25 @@ nätverksanslutningar. Körning visas i Programlistning~\ref{listing:netstat}.
 % --tcp 
 % --numeric
 
-\begin{listing}[H]
-  \shellcode{include/p1_netstat1}
-  \caption{Körning av \texttt{netstat}.}
-  \label{listing:netstat}
-\end{listing}
-
+\shellsource{include/p1_netstat1}
+					  {Körning av \texttt{netstat}.}
+			 	    {listing:netstat}
 
 Sedan körs programmet \texttt{nmap} med den lokala datorn som argument, utan
 övriga flaggor. Körning av detta visas i Programlistning~\ref{listing:nmap}.
 
 \begin{listing}[H]
   \shellcode{include/p1_nmap}
+  \caption{Körning av \texttt{nmap}.}
+  \label{listing:nmap}
+\end{listing}
+
+För att jämföra utmatningarnas innehåll kombineras innehållet i
+Programlistning~\ref{listing:netstat} och Programlistning~\ref{listing:nmap}.
+Kombinationen visas i Programlistning~\ref{listing:diff}
+
+\begin{listing}[H]
+  \shellcode{include/p1_nmap}
   \caption{Körning av \texttt{nnmap}.}
-  \label{listing:nnmap}
+  \label{listing:nmap}
 \end{listing}
