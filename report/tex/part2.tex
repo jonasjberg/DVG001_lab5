@@ -30,7 +30,38 @@ Innehållet i webbsidan ska sedan ändras (\texttt{index.html}) till något anna
 
 
 \subsubsection{Lösning}
-% TODO: ..
+Här väljs för enkelhetens skull webbservern \texttt{apache}. 
+Valet av webbserver undersöks en del, massvis finns skrivet i frågan, t.ex.
+\cite{webserver:compar1}, \cite{webserver:compar2}.
+
+Först installeras webbservern \texttt{apache} från Debians paketarkiv med
+\texttt{apt-get}. 
+Detta visas i Programlistning~\ref{listing:apache-install}.
+
+\shellsource{include/p2_apache-install}
+            {Installation av webbservern \texttt{apache}.}
+            {listing:apache-install}
+
+
+För att testa servern skrivs ett enkelt dokument i
+\texttt{markdown}\cite{Gruber2013}-syntax som sedan kompileras till
+\texttt{html} med hjälp av \texttt{pandoc}\cite{MacFarlane2013}.
+Dokumentet visas visas i Programlistning~\ref{listing:p2_apache-testpage}.
+En skärmdump på visning av det resulterande \texttt{html}-dokumentet visas i
+Figur~\ref{fig:01}.
+
+\begin{listing}[H]
+\markdownfile{include/p2_apache-testpage.md}
+\caption{Textfilen skriven i \texttt{markdown}-syntax som senare konverteras till \texttt{html}-sidan.}
+\label{listing:p2_apache-testpage}
+\end{listing}
+
+\screenshot{include/p2_apache-screenshot}
+           {Skärmdump på visning av den egna hemsidan.}
+           {todo}
+           {fig:01}
+
+
 
 
 % ______________________________________________________________________________

@@ -113,6 +113,29 @@ showtabs=false,
 texcl=false,
 }
 
+\newmintedfile[markdownfile]{markdown}{
+%bgcolor=mintedbackground,
+%fontfamily=tt,
+breaklines=true,
+breakautoindent=true,
+fontsize=\footnotesize,
+linenos=true,
+numberblanklines=true,
+numbersep=12pt,
+numbersep=5pt,
+%gobble=0,
+frame=lines,
+%framerule=0.4pt,
+framesep=2mm,
+funcnamehighlighting=true,
+tabsize=4,
+obeytabs=false,
+mathescape=false
+samepage=false,
+showspaces=false,
+showtabs=false,
+texcl=false,
+}
 
 \expandafter\def\csname PY@tok@err\endcsname{}
 \expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{{\strut ##1}}}
@@ -131,6 +154,16 @@ texcl=false,
 \caption{#2}
 \label{#3}
 \end{listing}
+}
+
+\newcommand{\screenshot}[4]{
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{#1}
+%\includegraphics[height=8.0cm]{#1}
+\caption[#2]{#3}
+\label{#4}
+\end{figure}
 }
 
 
