@@ -42,6 +42,22 @@ Detta visas i Programlistning~\ref{listing:apache-install}.
             {Installation av webbservern \texttt{apache}.}
             {listing:apache-install}
 
+Efter installationen körs samma kontroll av öppna portar som i den första
+uppgiften.  Först \texttt{netstat} i Programlistning~\ref{listing:2_netstat},
+följt av \texttt{nmap} i Programlistning~\ref{listing:2_nmap}.
+
+\shellsource{include/p2_netstat}
+						{Körning av \texttt{netstat} efter installationen av
+					   \texttt{apache}.}
+            {listing:2_netstat}
+
+\shellsource{include/p2_nmap}
+            {Körning av \texttt{nmap} efter installationen av
+					   \texttt{apache}.}
+            {listing:2_nmap}
+
+
+
 
 För att testa servern skrivs ett enkelt dokument i
 \texttt{markdown}\cite{Gruber2013}-syntax som sedan kompileras till
@@ -60,7 +76,6 @@ Figur~\ref{fig:01}.
            {Skärmdump på visning av den egna hemsidan.}
            {todo}
            {fig:01}
-
 
 
 
