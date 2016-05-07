@@ -23,8 +23,7 @@ Webbservern ska köras som användaren \texttt{www-data} och tillhöra gruppen
 % ______________________________________________________________________________
 \subsection{Uppgift 2}
 \subsubsection{Uppgiftsbeskrivning}
-Här är uppgiften att installera \texttt{apache2} (eller någon annan befintlig
-webbservrar) på vår server.
+Här är uppgiften att installera \texttt{apache2} eller någon annan webbserver.
 Innehållet i webbsidan ska sedan ändras (\texttt{index.html}) till något annat
 än standardvärdet, varpå ändringen ska kontrolleras via lämplig \texttt{URL}.
 
@@ -68,13 +67,15 @@ Figur~\ref{fig:01}.
 
 \begin{listing}[H]
 \markdownfile{include/p2_apache-testpage.md}
-\caption{Textfilen skriven i \texttt{markdown}-syntax som senare konverteras till \texttt{html}-sidan.}
+\caption{Textfilen skriven med \texttt{markdown}-syntax som senare konverteras
+         till \texttt{html} och visas renderad i Figur~\ref{fig:01}.}
 \label{listing:p2_apache-testpage}
 \end{listing}
 
 \screenshot{include/p2_apache-screenshot}
            {Skärmdump på visning av den egna hemsidan.}
-           {todo}
+           {Skärmdump på den egna webbsidan (\texttt{index.html}) som
+            tillhandahålls av \texttt{apache}.}
            {fig:01}
 
 
