@@ -1,0 +1,27 @@
+jonas@debian:~$ sudo apt install nfs-common nfs-kernel-server rpcbind
+[sudo] password for jonas: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+nfs-common is already the newest version.
+rpcbind is already the newest version.
+The following NEW packages will be installed:
+  nfs-kernel-server
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 118 kB of archives.
+After this operation, 427 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ftp.se.debian.org/debian/ jessie/main nfs-kernel-server i386 1:1.2.8-9 [118 kB]
+Fetched 118 kB in 0s (765 kB/s)           
+Selecting previously unselected package nfs-kernel-server.
+(Reading database ... 130831 files and directories currently installed.)
+Preparing to unpack .../nfs-kernel-server_1%3a1.2.8-9_i386.deb ...
+Unpacking nfs-kernel-server (1:1.2.8-9) ...
+Processing triggers for man-db (2.7.0.2-5) ...
+Processing triggers for systemd (215-17+deb8u3) ...
+Setting up nfs-kernel-server (1:1.2.8-9) ...
+
+Creating config file /etc/exports with new version
+
+Creating config file /etc/default/nfs-kernel-server with new version
+Processing triggers for systemd (215-17+deb8u3) ...
