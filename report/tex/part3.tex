@@ -19,16 +19,54 @@ I den här delen upprättas grundläggande säkerhet med en brandvägg.
 
 
 % ______________________________________________________________________________
-\subsection{Uppgift 2}
+\subsection{Uppgift 4}
 \subsubsection{Uppgiftsbeskrivning}
-% TODO: ..
-
+Här används brandväggen \texttt{ufw} för att skydda servern från obehörigt
+tillträde.
 
 \subsubsection{Lösning}
 Till att börja med så installeras brandväggen \texttt{ufw} enligt 
-Programlistning~\ref{listing:p2_readonly}.
+Programlistning~\ref{listing:p3_ufw-install}.
 
 \shellsource{include/p3_ufw-install}
             {Installation av brandväggen \texttt{ufw}.}
             {listing:p3_ufw-install}
 
+Konfigurationsfilen \texttt{/etc/default/ufw} kontrolleras för
+\texttt{IPv6}-stöd, som är aktiverat. Här finns också standardåtgärder för
+matchningar mot regler och andra inställningar.
+
+Programlistning~\ref{listing:p3_ufw-config} visar hur regler för \texttt{SSH}
+läggs till och aktivering av brandväggen, enligt
+labinstruktionerna\cite{dvg001:instruktionerLab5} och \cite{ubuntu:ufw}.
+
+\shellsource{include/p3_ufw-config}
+            {Regler för \texttt{SSH} läggs till, följt av att brandväggen
+             aktiveras.}
+            {listing:p3_ufw-config}
+
+Den slutgiltiga konfigurationen av \texttt{ufw} visas tillsammans med en
+körning av \texttt{nmap} i Programlistning~\ref{listing:p3_ufw-status_nmap}.
+
+\shellsource{include/p3_ufw-status_nmap}
+            {Slutgiltig konfiguration av \texttt{ufw} och körning av 
+             \texttt{nmap} från servern.}
+            {listing:p3_ufw-status_nmap}
+
+Ytterligare en körning av \texttt{nmap} från maskinen ''\texttt{ProBookII}''
+(\texttt{IP}-adress \texttt{192.168.1.107}) visas i
+Programlistning~\ref{listing:p3_nmap}.
+
+\shellsource{include/p3_nmap}
+            {Körning av \texttt{nmap} mot servern från ''\texttt{ProBookII}''
+             (\texttt{IP}-adress \texttt{192.168.1.107}).}
+            {listing:p3_nmap}
+
+Och slutligen visas samma sak från maskinen ''\texttt{ProBook-6465b}''
+(\texttt{IP}-adress \texttt{192.168.1.110}) i
+Programlistning~\ref{listing:p3_nmap2}.
+
+\shellsource{include/p3_nmap2}
+            {Körning av \texttt{nmap} mot servern från ''\texttt{ProBook-6465b}''
+             (\texttt{IP}-adress \texttt{192.168.1.110}).}
+            {listing:p3_nmap2}

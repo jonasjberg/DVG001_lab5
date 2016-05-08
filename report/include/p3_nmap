@@ -1,0 +1,14 @@
+spock@ProBookII:~$ sudo nmap 192.168.1.112
+
+Starting Nmap 7.01 ( https://nmap.org ) at 2016-05-09 00:28 CEST
+Nmap scan report for 192.168.1.112
+Host is up (0.00030s latency).
+Not shown: 996 filtered ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+111/tcp  open  rpcbind
+2049/tcp open  nfs
+MAC Address: 08:00:27:F1:08:4E (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 11.11 seconds

@@ -1,0 +1,17 @@
+root@debian:/# ufw logging on
+Logging enabled
+root@debian:/# ufw allow ssh
+Rules updated
+Rules updated (v6)
+root@debian:/#
+root@debian:/# ufw enable
+Firewall is active and enabled on system startup
+root@debian:/# ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere
+22                         ALLOW       Anywhere (v6)
+
+root@debian:/#

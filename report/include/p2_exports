@@ -9,5 +9,5 @@
 # /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
 #
 
-# Gör /srv/data läsbar för hela nätet, skrivbar bara för 192.168.1.110.
+# Gör /srv/data läsbar för hela nätet, skrivbar bara för 192.168.1.107.
 /srv/data 192.168.1.107(rw) 192.168.1.1/24(ro,no_root_squash,no_subtree_check,crossmnt,fsid=0)

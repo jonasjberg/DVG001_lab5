@@ -8,6 +8,6 @@ spock@ProBookII:/mnt/temp$ l
 total 12K
 drwxr-xr-x 2 root root 4,0K maj  8 21:13 .
 drwxr-xr-x 6 root root 4,0K maj  8 21:11 ..
--rw-r--r-- 1 root root   37 maj  8 21:13 README
+-rw-r--r-- 1 root root   37 maj  8 21:16 README
 spock@ProBookII:/mnt/temp$ cat README 
 I AM ALIVE! (at 2016-05-08T21:16:51)

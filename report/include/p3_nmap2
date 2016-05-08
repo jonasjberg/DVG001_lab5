@@ -1,0 +1,15 @@
+spock@ProBook-6465b ~                                                           [0:31:54]
+> $ sudo nmap 192.168.1.112
+
+Starting Nmap 7.01 ( https://nmap.org ) at 2016-05-09 00:31 CEST
+Nmap scan report for 192.168.1.112
+Host is up (0.027s latency).
+Not shown: 996 filtered ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+111/tcp  open  rpcbind
+2049/tcp open  nfs
+MAC Address: 00:26:82:5A:76:41 (Gemtek Technology)
+
+Nmap done: 1 IP address (1 host up) scanned in 10.72 seconds

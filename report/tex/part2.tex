@@ -119,9 +119,9 @@ Skillnaden är att \texttt{"yes"} lagts till på rad 16.
 Sedan ändras konfigurationsfilen \texttt{/etc/exports} enligt
 uppgiftsbeskrivningen, katalogen \texttt{/srv/data} ska vara läsbar för hela
 nätet, och en maskin ska kunna både skriva och läsa katalogen. 
-I det här fallet får maskinen med \texttt{IP}-adressen \texttt{192.168.1.107}
-läs- och skrivrättigheter. Det är också den maskinen som agerar värdsystem åt
-servern, som körs som virtuell maskin med \texttt{VirtualBox}.
+I det här fallet får maskinen ''\texttt{ProBookII}'', med \texttt{IP}-adress
+\texttt{192.168.1.107}, läs- och skrivrättigheter. Det är också den maskinen
+som agerar värdsystem åt servern, som är en \texttt{VirtualBox} virtuell maskin.
 
 Den modifierade konfigurationsfilen visas i
 Programlistning~\ref{listing:p2_exports}.
@@ -160,30 +160,33 @@ Programlistning~\ref{listing:p2_readme}.
             {Skapande av en tydligt identifierbar fil för test av åtkomst.}
             {listing:p2_readme}
 
-Den delade resursen monteras sedan från maskinen med \texttt{IP}-adressen
-\texttt{192.168.1.107} enligt Programlistning~\ref{listing:p2_mounting}.
+Den delade resursen monteras sedan från maskinen ''\texttt{ProBookII}''
+(\texttt{IP}-adress \texttt{192.168.1.107}) enligt
+Programlistning~\ref{listing:p2_mounting}.
 Vi ser att filen som skapades på servern är läsbar.
 
 \shellsource{include/p2_mounting}
-            {Montering av \texttt{NFS}-resursen från maskinen med
-             \texttt{IP}-adressen \texttt{192.168.1.107}.}
+            {Montering av \texttt{NFS}-resursen från maskinen
+             ''\texttt{ProBookII}''.}
             {listing:p2_mounting}
 
 Test av skrivrättigheter i den monterade katalogen visas i
 Programlistning~\ref{listing:p2_writing}. Maskinen har skrivrättigheter.
 
 \shellsource{include/p2_writing}
-            {Test av skrivrättigheter i den monterade \texttt{NFS}-resursen 
-             från maskinen med \texttt{IP}-adressen \texttt{192.168.1.107}.}
+            {Test av skrivrättigheter i \texttt{NFS}-resursen från maskinen
+             ''\texttt{ProBookII}''.}
             {listing:p2_writing}
 
-För att testa rättigheter för det övriga nätet används en tredje maskin med
-\texttt{IP}-adress \texttt{192.168.1.110}. Den här maskinen nekas då den
-försöker skriva till den monterade \texttt{NFS}-resursen.
+För att testa rättigheter för det övriga nätet används en tredje maskin,
+''\texttt{ProBook-6465b}'' med \texttt{IP}-adress \texttt{192.168.1.110}.  
+Den här maskinen nekas då den försöker skriva till den monterade
+\texttt{NFS}-resursen.  
 Detta visas i Programlistning~\ref{listing:p2_readonly}.
 
 \shellsource{include/p2_readonly}
-            {Test av rättigheter för det övriga nätet från en tredje maskin.}
+            {Test av rättigheter för det övriga nätet från en tredje maskin,
+             ''\texttt{ProBook-6465b}''.}
             {listing:p2_readonly}
 
 

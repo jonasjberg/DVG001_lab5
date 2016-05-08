@@ -1,0 +1,28 @@
+root@debian:/home/jonas# ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         LIMIT       Anywhere
+80                         ALLOW       Anywhere
+2049                       ALLOW       192.168.1.0/24
+111                        ALLOW       192.168.1.0/24
+22                         LIMIT       Anywhere (v6)
+80                         ALLOW       Anywhere (v6)
+
+root@debian:/home/jonas# nmap localhost
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2016-05-09 00:27 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000014s latency).
+Other addresses for localhost (not scanned): 127.0.0.1
+Not shown: 994 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+25/tcp   open  smtp
+80/tcp   open  http
+111/tcp  open  rpcbind
+631/tcp  open  ipp
+2049/tcp open  nfs
+
+Nmap done: 1 IP address (1 host up) scanned in 2.50 seconds
