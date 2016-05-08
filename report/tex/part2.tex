@@ -106,14 +106,15 @@ Programlistning~\ref{listing:p2_rpcbind-status}.
 						{Statusinformation från tjänsten \texttt{rpcbind}.}
             {listing:p2_rpcbind-status}
 
+
 Konfigurationsfilen \texttt{/etc/default/nfs-common} ändras så att servern kan
-hantera användare ordentligt och fördela resurser baserat på användare andra än
-användaren \texttt{nobody} och gruppen \texttt{nogroup}.
-Detta enligt lab-instruktionerna \cite{dvg001:instruktionerLab5}, 
+hantera översättning av användarnamn ordentligt.
+Detta enligt labinstruktionerna\cite{dvg001:instruktionerLab5}, 
 \cite{ubuntu:NFSv4howto} och \cite{ubuntu:settingupNFShowto}.
 
 Den modifierade konfigurationsfilen visas i
 Programlistning~\ref{listing:p2_nfs-common-config}.
+Skillnaden är att \texttt{"yes"} lagts till på rad 16.
 
 \shellsource{include/p2_nfs-common-config}
 						{Den modifierade konfigurationsfilen
