@@ -1,5 +1,5 @@
 root@debian:/home/jonas# service rpcbind status
-● rpcbind.service - LSB: RPC portmapper replacement
+* rpcbind.service - LSB: RPC portmapper replacement
    Loaded: loaded (/etc/init.d/rpcbind)
   Drop-In: /run/systemd/generator/rpcbind.service.d
            └─50-rpcbind-$portmap.conf

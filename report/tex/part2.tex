@@ -29,33 +29,30 @@ Innehållet i webbsidan ska sedan ändras (\texttt{index.html}) till något anna
 
 
 \subsubsection{Lösning}
-Här väljs för enkelhetens skull webbservern \texttt{apache}. 
+Här väljs för enkelhetens skull webbservern \texttt{apache}.
 Valet av webbserver undersöks en del, massvis finns skrivet i frågan, t.ex.
 \cite{webserver:compar1}, \cite{webserver:compar2}.
 
 Först installeras webbservern \texttt{apache} från Debians paketarkiv med
-\texttt{apt-get}. 
+\texttt{apt-get}.
 Detta visas i Programlistning~\ref{listing:apache-install}.
 
 \shellsource{include/p2_apache-install}
             {Installation av webbservern \texttt{apache}.}
             {listing:apache-install}
 
+
 Efter installationen körs samma kontroll av öppna portar som i den första
 uppgiften.  Först \texttt{netstat} i Programlistning~\ref{listing:2_netstat},
 följt av \texttt{nmap} i Programlistning~\ref{listing:2_nmap}.
 
 \shellsource{include/p2_netstat}
-						{Körning av \texttt{netstat} efter installationen av
-					   \texttt{apache}.}
+            {Körning av \texttt{netstat} efter installationen av \texttt{apache}.}
             {listing:2_netstat}
 
 \shellsource{include/p2_nmap}
-            {Körning av \texttt{nmap} efter installationen av
-					   \texttt{apache}.}
+            {Körning av \texttt{nmap} efter installationen av \texttt{apache}.}
             {listing:2_nmap}
-
-
 
 
 För att testa servern skrivs ett enkelt dokument i
@@ -79,22 +76,21 @@ Figur~\ref{fig:01}.
            {fig:01}
 
 
-
 % ______________________________________________________________________________
 \subsection{Uppgift 3}
 \subsubsection{Uppgiftsbeskrivning}
 Här ska en \texttt{NFS}-server och \texttt{NFS}-klient installeras och
-konfigureras. 
+konfigureras.
 
 
 \subsubsection{Lösning}
-Först installeras grundläggande paket enligt instruktioner. 
+Först installeras grundläggande paket enligt instruktioner.
 Installationen visas i Programlistning~\ref{listing:p2_nfs-install}.
 Programmen \texttt{nfs-common} och \texttt{rpcbind} är redan installerade
 som standard med den version av Debian som körs i labmiljön.
 
 \shellsource{include/p2_nfs-install}
-						{Installation av \texttt{nfs-common}, \texttt{nfs-kernel-server}
+            {Installation av \texttt{nfs-common}, \texttt{nfs-kernel-server}
              och \texttt{rpcbind.}}
             {listing:p2_nfs-install}
 
@@ -103,13 +99,13 @@ Status för \texttt{rpcbind} kontrolleras i
 Programlistning~\ref{listing:p2_rpcbind-status}.
 
 \shellsource{include/p2_rpcbind-status}
-						{Statusinformation från tjänsten \texttt{rpcbind}.}
+            {Statusinformation från tjänsten \texttt{rpcbind}.}
             {listing:p2_rpcbind-status}
 
 
 Konfigurationsfilen \texttt{/etc/default/nfs-common} ändras så att servern kan
 hantera översättning av användarnamn ordentligt.
-Detta enligt labinstruktionerna\cite{dvg001:instruktionerLab5}, 
+Detta enligt labinstruktionerna\cite{dvg001:instruktionerLab5},
 \cite{ubuntu:NFSv4howto} och \cite{ubuntu:settingupNFShowto}.
 
 Den modifierade konfigurationsfilen visas i
@@ -117,14 +113,25 @@ Programlistning~\ref{listing:p2_nfs-common-config}.
 Skillnaden är att \texttt{"yes"} lagts till på rad 16.
 
 \shellsource{include/p2_nfs-common-config}
-						{Den modifierade konfigurationsfilen
-						 \texttt{/etc/default/nfs-common}.}
+            {Den modifierade konfigurationsfilen \texttt{/etc/default/nfs-common}.}
             {listing:p2_nfs-common-config}
 
 
-Status för \texttt{rpcbind} kontrolleras i
-Programlistning~\ref{listing:p2_rpcbind-status}.
+Efter att filen har modifierats startas tjänsten om för att förändringarna
+ska träda i kraft, statusinformation skrivs sedan ut. Detta visas i
+Programlistning~\ref{listing:p2_nfs-status}.
 
-\shellsource{include/p2_rpcbind-status}
-						{Statusinformation från tjänsten \texttt{rpcbind}.}
-            {listing:p2_rpcbind-status}
+\shellsource{include/p2_nfs-status}
+            {Tjänsten \texttt{nfs-kernel-server} startas om efter att
+             konfigurationsfilen ändrats. Statusinformation skrivs sedan ut.}
+            {listing:p2_nfs-status}
+
+
+För att se vad som delas ut från servern används kommandot \texttt{showmount}
+på serverns ''\texttt{localhost}'', \texttt{127.0.0.1}, detta visas i 
+Programlistning~\ref{listing:p2_showmount}.
+
+\shellsource{include/p2_showmount}
+            {Undersökning av vilka filsystem som servern exporterar med 
+             \texttt{NFS}.}
+            {listing:p2_showmount}

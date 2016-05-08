@@ -1,4 +1,20 @@
-root@debian:/home/jonas# service nfs status
-● nfs.service
-   Loaded: not-found (Reason: No such file or directory)
-   Active: inactive (dead)
+root@debian:/home/jonas# vim /etc/exports 
+root@debian:/home/jonas# service nfs-kernel-server stop
+root@debian:/home/jonas# service nfs-kernel-server start
+root@debian:/home/jonas# systemctl status nfs-kernel-server.service
+● nfs-kernel-server.service - LSB: Kernel NFS server support
+   Loaded: loaded (/etc/init.d/nfs-kernel-server)
+   Active: active (running) since Sun 2016-05-08 20:41:54 CEST; 2s ago
+  Process: 2494 ExecStop=/etc/init.d/nfs-kernel-server stop (code=exited, status=0/SUCCESS)
+  Process: 2611 ExecStart=/etc/init.d/nfs-kernel-server start (code=exited, status=0/SUCCESS)
+   CGroup: /system.slice/nfs-kernel-server.service
+           └─2638 /usr/sbin/rpc.mountd --manage-gids
+
+May 08 20:41:54 debian nfs-kernel-server[2611]: Exporting directories for NFS kernel daemon...exportfs: /etc/exports [2]: Neither 'subtree_check' or 'no_sub...rv/data".
+May 08 20:41:54 debian nfs-kernel-server[2611]: Assuming default behaviour ('no_subtree_check').
+May 08 20:41:54 debian nfs-kernel-server[2611]: NOTE: this default has changed since nfs-utils version 1.0.x
+May 08 20:41:54 debian nfs-kernel-server[2611]: .
+May 08 20:41:54 debian nfs-kernel-server[2611]: Starting NFS kernel daemon: nfsd mountd.
+May 08 20:41:54 debian rpc.mountd[2638]: Version 1.2.8 starting
+Hint: Some lines were ellipsized, use -l to show in full.
+root@debian:/home/jonas# 
