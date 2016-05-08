@@ -1,1 +1,4 @@
 root@debian:/# echo "I AM ALIVE! (at $(date +%FT%H:%M:%S))" > /srv/data/README
+root@debian:/# cat !$
+cat /srv/data/README
+I AM ALIVE! (at 2016-05-08T21:16:51)
