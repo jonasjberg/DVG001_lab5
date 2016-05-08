@@ -116,8 +116,22 @@ Skillnaden är att \texttt{"yes"} lagts till på rad 16.
             {Den modifierade konfigurationsfilen \texttt{/etc/default/nfs-common}.}
             {listing:p2_nfs-common-config}
 
+Sedan ändras konfigurationsfilen \texttt{/etc/exports} enligt
+uppgiftsbeskrivningen, katalogen \texttt{/srv/data} ska vara läsbar för hela
+nätet, och en maskin ska kunna både skriva och läsa katalogen. 
+I det här fallet får maskinen med \texttt{IP}-adressen \texttt{192.168.1.107}
+läs- och skrivrättigheter. Det är också den maskinen som agerar värdsystem åt
+servern, som körs som virtuell maskin med \texttt{VirtualBox}.
 
-Efter att filen har modifierats startas tjänsten om för att förändringarna
+Den modifierade konfigurationsfilen visas i
+Programlistning~\ref{listing:p2_exports}.
+
+\shellsource{include/p2_exports}
+            {Den modifierade konfigurationsfilen \texttt{/etc/exports}.}
+            {listing:p2_exports}
+
+
+Efter att filerna har modifierats startas tjänsten om för att förändringarna
 ska träda i kraft, statusinformation skrivs sedan ut. Detta visas i
 Programlistning~\ref{listing:p2_nfs-status}.
 
@@ -136,9 +150,31 @@ Programlistning~\ref{listing:p2_showmount}.
              \texttt{NFS}.}
             {listing:p2_showmount}
 
+
+\subsubsection{Resultat}
+
 En textfil skapas i den delade katalogen enligt 
 Programlistning~\ref{listing:p2_readme}.
 
 \shellsource{include/p2_readme}
             {Skapande av en tydligt identifierbar fil för test av åtkomst.}
             {listing:p2_readme}
+
+Den delade resursen monteras sedan från maskinen med \texttt{IP}-adressen
+\texttt{192.168.1.107} enligt Programlistning~\ref{listing:p2_mounting}.
+Vi ser att filen som skapades på servern är läsbar.
+
+\shellsource{include/p2_mounting}
+            {Montering av \texttt{NFS}-resursen från maskinen med
+             \texttt{IP}-adressen \texttt{192.168.1.107}.}
+            {listing:p2_mounting}
+
+Skrivrättigheter i den monterade katalogen visas i 
+Programlistning~\ref{listing:p2_writing}.
+
+\shellsource{include/p2_writing}
+            {Test av skrivrättigheter i den monterade \texttt{NFS}-resursen 
+             från maskinen med \texttt{IP}-adressen \texttt{192.168.1.107}.}
+            {listing:p2_mounting}
+
+

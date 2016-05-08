@@ -1,0 +1,13 @@
+spock@ProBookII:~$ sudo mkdir /mnt/temp
+[sudo] password for spock: 
+spock@ProBookII:~$ sudo mount 192.168.1.112:/srv/data /mnt/temp
+spock@ProBookII:/mnt/temp$ mount | grep nfs
+192.168.1.112:/srv/data on /mnt/temp type nfs (rw,relatime,vers=3,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp,timeo=600, retrans=2,sec=sys,mountaddr=192.168.1.112,mountvers=3,mountport=33489,mountproto=udp, local_lock=none,addr=192.168.1.112)
+spock@ProBookII:~$ cd /mnt/temp
+spock@ProBookII:/mnt/temp$ l
+total 12K
+drwxr-xr-x 2 root root 4,0K maj  8 21:13 .
+drwxr-xr-x 6 root root 4,0K maj  8 21:11 ..
+-rw-r--r-- 1 root root   37 maj  8 21:13 README
+spock@ProBookII:/mnt/temp$ cat README 
+I AM ALIVE! (at 2016-05-08T21:16:51)

@@ -1,0 +1,9 @@
+spock@ProBookII:/mnt/temp$ echo "i have rw permissions" > /mnt/temp/test
+spock@ProBookII:/mnt/temp$ cat /mnt/temp/test 
+i have rw permissions
+spock@ProBookII:/mnt/temp$ l
+total 16K
+drwxrwxrwx 2 root  root  4,0K maj  8 21:33 .
+drwxr-xr-x 6 root  root  4,0K maj  8 21:11 ..
+-rw-r--r-- 1 root  root    37 maj  8 21:16 README
+-rw-rw-r-- 1 spock spock   22 maj  8 21:33 test
