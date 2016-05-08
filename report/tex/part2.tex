@@ -169,12 +169,22 @@ Vi ser att filen som skapades på servern är läsbar.
              \texttt{IP}-adressen \texttt{192.168.1.107}.}
             {listing:p2_mounting}
 
-Skrivrättigheter i den monterade katalogen visas i 
-Programlistning~\ref{listing:p2_writing}.
+Test av skrivrättigheter i den monterade katalogen visas i
+Programlistning~\ref{listing:p2_writing}. Maskinen har skrivrättigheter.
 
 \shellsource{include/p2_writing}
             {Test av skrivrättigheter i den monterade \texttt{NFS}-resursen 
              från maskinen med \texttt{IP}-adressen \texttt{192.168.1.107}.}
-            {listing:p2_mounting}
+            {listing:p2_writing}
+
+För att testa rättigheter för det övriga nätet används en tredje maskin med
+\texttt{IP}-adress \texttt{192.168.1.110}. Den här maskinen nekas då den
+försöker skriva till den monterade \texttt{NFS}-resursen.
+Detta visas i Programlistning~\ref{listing:p2_readonly}.
+
+\shellsource{include/p2_readonly}
+            {Test av rättigheter för det övriga nätet från en tredje maskin.}
+            {listing:p2_readonly}
 
 
+Vi har alltså lyckats konfigurera vår server enligt instruktionerna.

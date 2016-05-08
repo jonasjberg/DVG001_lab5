@@ -1,0 +1,11 @@
+spock@ProBook-6465b ~                                                           [21:49:42]
+> $ sudo mount 192.168.1.112:/srv/data /mnt/adhoc
+
+spock@ProBook-6465b ~                                                           [21:49:48]
+> $ mount | grep nfs
+192.168.1.112:/srv/data on /mnt/adhoc type nfs (rw,relatime, vers=3,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp, timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.112, mountvers=3,mountport=33489,mountproto=udp,local_lock=none, addr=192.168.1.112)
+
+spock@ProBook-6465b ~                                                           [21:49:55]
+> $ echo "testar skrivrättigheter från en annan maskin" > /mnt/adhoc/test2
+zsh: read-only file system: /mnt/adhoc/test2
+
