@@ -1,0 +1,1 @@
+root@debian:/# echo "I AM ALIVE! (at $(date +%FT%H:%M:%S))" > /srv/data/README
