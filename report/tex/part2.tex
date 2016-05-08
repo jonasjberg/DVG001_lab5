@@ -89,12 +89,41 @@ konfigureras.
 
 \subsubsection{Lösning}
 Först installeras grundläggande paket enligt instruktioner. 
-Installationen visas i Programlistning~\ref{listing:nfs-install}.
-Programmen \texttt{nfs-common} och \texttt{rpcbind} är redan installerade.
+Installationen visas i Programlistning~\ref{listing:p2_nfs-install}.
+Programmen \texttt{nfs-common} och \texttt{rpcbind} är redan installerade
+som standard med den version av Debian som körs i labmiljön.
 
 \shellsource{include/p2_nfs-install}
 						{Installation av \texttt{nfs-common}, \texttt{nfs-kernel-server}
-						 och \texttt{rpcbind.}
-            {listing:2_nfs-install}
+             och \texttt{rpcbind.}}
+            {listing:p2_nfs-install}
 
 
+Status för \texttt{rpcbind} kontrolleras i
+Programlistning~\ref{listing:p2_rpcbind-status}.
+
+\shellsource{include/p2_rpcbind-status}
+						{Statusinformation från tjänsten \texttt{rpcbind}.}
+            {listing:p2_rpcbind-status}
+
+Konfigurationsfilen \texttt{/etc/default/nfs-common} ändras så att servern kan
+hantera användare ordentligt och fördela resurser baserat på användare andra än
+användaren \texttt{nobody} och gruppen \texttt{nogroup}.
+Detta enligt lab-instruktionerna \cite{dvg001:instruktionerLab5}, 
+\cite{ubuntu:NFSv4howto} och \cite{ubuntu:settingupNFShowto}.
+
+Den modifierade konfigurationsfilen visas i
+Programlistning~\ref{listing:p2_nfs-common-config}.
+
+\shellsource{include/p2_nfs-common-config}
+						{Den modifierade konfigurationsfilen
+						 \texttt{/etc/default/nfs-common}.}
+            {listing:p2_nfs-common-config}
+
+
+Status för \texttt{rpcbind} kontrolleras i
+Programlistning~\ref{listing:p2_rpcbind-status}.
+
+\shellsource{include/p2_rpcbind-status}
+						{Statusinformation från tjänsten \texttt{rpcbind}.}
+            {listing:p2_rpcbind-status}

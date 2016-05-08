@@ -1,0 +1,11 @@
+root@debian:/home/jonas# service rpcbind status
+● rpcbind.service - LSB: RPC portmapper replacement
+   Loaded: loaded (/etc/init.d/rpcbind)
+  Drop-In: /run/systemd/generator/rpcbind.service.d
+           └─50-rpcbind-$portmap.conf
+   Active: active (running) since Sun 2016-05-08 18:30:43 CEST; 10min ago
+  Process: 373 ExecStart=/etc/init.d/rpcbind start (code=exited, status=0/SUCCESS)
+   CGroup: /system.slice/rpcbind.service
+           └─392 /sbin/rpcbind -w
+
+May 08 18:30:43 debian rpcbind[373]: Starting rpcbind daemon....
